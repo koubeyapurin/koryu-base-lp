@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【v1・旧デザイン】KORYU BASE Ho Chi Minh（仮称）｜ベトナム進出の拠点と商圏づくり</title>
+<meta name="description" content="ベトナム進出に必要な「場所」と「つながり」を、JTBの海外ネットワークで。書類の整った事業拠点、現地パートナーの紹介、入居企業どうしの交流と共同マーケティングで、低リスクな海外進出と進出後の売上拡大を支えます。（学生による事業提案コンセプト）">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1a33;
+  --navy-2:#13284a;
+  --navy-3:#1d3a66;
+  --gold:#c8a45c;
+  --gold-soft:#e9dcc0;
+  --ink:#1c2433;
+  --ink-2:#4a5568;
+  --ink-3:#6b7585;
+  --line:#dfe3ea;
+  --bg:#ffffff;
+  --bg-soft:#f4f6f9;
+  --bg-warm:#faf7f1;
+  --accent:#b8322a;
+  --radius:4px;
+  --wrap:1120px;
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+  --en:"Jost","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- section heading (EN label → JP heading → lead) ---------- */
+.sec{padding:112px 0}
+.sec--soft{background:var(--bg-soft)}
+.sec--warm{background:var(--bg-warm)}
+.sec--navy{background:var(--navy);color:#fff}
+.eyebrow{font-family:var(--en);font-size:13px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.center .eyebrow{justify-content:center}
+.center .eyebrow::after{content:"";width:28px;height:1px;background:currentColor}
+.h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,38px);line-height:1.55;letter-spacing:.06em;margin:0 0 20px}
+.lead{color:var(--ink-2);margin:0;max-width:720px}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.sec--navy .lead,.contact .lead{color:#c9d2e0}
+h1,.h2,h3,.lead,.statement p{word-break:auto-phrase;text-wrap:pretty}
+.note{font-size:12px;color:var(--ink-3);line-height:1.7;margin-top:14px}
+.sec--navy .note{color:#93a0b5}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.08em;text-decoration:none;padding:16px 34px;border-radius:var(--radius);transition:background .2s,color .2s,transform .2s;border:1px solid transparent;cursor:pointer;font-family:var(--sans)}
+.btn--gold{background:var(--gold);color:var(--navy)}
+.btn--gold:hover{background:#d8b773}
+.btn--ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn--ghost:hover{background:rgba(255,255,255,.1)}
+.btn--navy{background:var(--navy);color:#fff}
+.btn--navy:hover{background:var(--navy-3)}
+.btn .arrow{font-family:var(--en);transition:transform .2s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* ---------- header ---------- */
+.header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
+.header.is-solid{background:rgba(11,26,51,.96);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header__in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo__mark{width:34px;height:34px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);color:var(--gold);font-size:17px}
+.logo__txt{font-family:var(--en);letter-spacing:.18em;font-size:15px;line-height:1.2}
+.logo__txt small{display:block;font-size:10px;letter-spacing:.2em;color:#9fb0c8}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-family:var(--en);font-size:12px;letter-spacing:.2em;color:#e6ebf3;text-decoration:none}
+.nav a:hover{color:var(--gold)}
+.nav .btn{padding:10px 20px;font-size:13px;font-family:var(--sans);letter-spacing:.06em}
+.menu-btn{display:none;background:none;border:0;color:#fff;width:44px;height:44px;cursor:pointer;padding:10px}
+.menu-btn span{display:block;height:1px;background:#fff;margin:6px 0;transition:transform .25s,opacity .25s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;background:var(--navy) url("img/hero-saigon-night.jpg") center/cover no-repeat;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,51,.78) 0%,rgba(11,26,51,.62) 45%,rgba(11,26,51,.92) 100%);z-index:-1}
+.hero__in{padding:140px 0 120px}
+.hero__label{font-family:var(--en);letter-spacing:.34em;font-size:13px;color:var(--gold);margin:0 0 28px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.6vw,64px);line-height:1.45;letter-spacing:.08em;margin:0 0 28px}
+.hero__sub{font-size:clamp(15px,1.6vw,18px);line-height:2;color:#dbe3ee;max-width:640px;margin:0 0 44px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:16px}
+.hero__scroll{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-family:var(--en);font-size:11px;letter-spacing:.3em;color:#b7c3d6;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px}
+.hero__scroll::after{content:"";width:1px;height:40px;background:linear-gradient(#b7c3d6,transparent);animation:drop 2s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- statement ---------- */
+.statement{padding:96px 0 40px;text-align:center}
+.statement p{font-family:var(--serif);font-size:clamp(22px,3vw,32px);line-height:1.8;letter-spacing:.08em;margin:0;font-weight:600}
+.statement p em{font-style:normal;background:linear-gradient(transparent 70%,var(--gold-soft) 70%)}
+
+/* ---------- market numbers ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:40px 24px;text-align:center}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat__label{font-size:13px;color:var(--ink-2);margin:0 0 6px;letter-spacing:.06em}
+.stat__num{font-family:var(--serif);font-weight:600;font-size:clamp(36px,4.4vw,52px);line-height:1.2;color:var(--navy);margin:0}
+.stat__num small{font-size:.42em;margin-left:4px;font-family:var(--sans);font-weight:500}
+.stat__src{font-size:11px;color:var(--ink-3);margin:10px 0 0;line-height:1.6}
+
+/* ---------- pains ---------- */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.pain{background:#fff;border:1px solid var(--line);padding:36px 30px 30px;position:relative}
+.pain__no{font-family:var(--en);font-size:12px;letter-spacing:.24em;color:var(--gold);margin:0 0 14px}
+.pain h3{font-family:var(--serif);font-size:20px;line-height:1.6;margin:0 0 14px;letter-spacing:.04em}
+.pain p{font-size:14px;color:var(--ink-2);margin:0}
+.pain__data{margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink-2);line-height:1.7}
+.pain__data b{font-family:var(--serif);font-size:22px;color:var(--accent);margin-right:6px}
+
+/* ---------- alone (if you go alone) ---------- */
+.alone{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.alone__img{position:relative;margin:0}
+.alone__img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.alone__list{list-style:none;padding:0;margin:32px 0 0;counter-reset:a}
+.alone__list li{position:relative;padding:0 0 26px 58px;margin:0 0 26px;border-bottom:1px solid var(--line);counter-increment:a}
+.alone__list li:last-child{margin:0;border:0;padding-bottom:0}
+.alone__list li::before{content:"0" counter(a);position:absolute;left:0;top:-2px;font-family:var(--en);font-size:28px;color:var(--gold);line-height:1}
+.alone__list h3{font-size:17px;margin:0 0 6px;font-weight:700;letter-spacing:.04em}
+.alone__list p{margin:0;font-size:14px;color:var(--ink-2)}
+
+/* ---------- solution points ---------- */
+.solve-head{text-align:center;margin-bottom:72px}
+.solve-head .badge{display:inline-block;font-family:var(--serif);font-weight:700;font-size:15px;color:#fff;background:var(--accent);padding:6px 22px;letter-spacing:.2em;margin-bottom:22px}
+.point{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.point+.point{margin-top:96px}
+.point--rev .point__img{order:2}
+.point__img img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.point__no{font-family:var(--en);letter-spacing:.24em;font-size:13px;color:var(--gold);margin:0 0 8px;display:flex;align-items:baseline;gap:10px}
+.point__no b{font-size:44px;font-weight:400;letter-spacing:0;line-height:1}
+.point h3{font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);line-height:1.6;margin:0 0 18px;letter-spacing:.05em}
+.point p{margin:0;color:var(--ink-2)}
+.point ul{margin:20px 0 0;padding:0;list-style:none}
+.point li{padding-left:24px;position:relative;margin:8px 0;font-size:14.5px}
+.point li::before{content:"";position:absolute;left:2px;top:.8em;width:10px;height:1px;background:var(--gold)}
+
+/* ---------- compare table ---------- */
+.table-wrap{margin-top:56px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.compare{width:100%;border-collapse:collapse;min-width:640px;background:#fff;font-size:14.5px}
+.compare th,.compare td{padding:20px 22px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.7}
+.compare thead th{font-size:14px;letter-spacing:.06em}
+.compare thead th:nth-child(2){background:#eef0f4;color:var(--ink-2)}
+.compare thead th:nth-child(3){background:var(--navy);color:#fff}
+.compare tbody th{width:20%;font-weight:700;background:var(--bg-soft);white-space:nowrap}
+.compare td:nth-child(2){color:var(--ink-2);width:36%}
+.compare td:nth-child(3){background:#fbf8f1;font-weight:500}
+.compare td:nth-child(3)::before{content:"◎";color:var(--gold);margin-right:8px}
+
+/* ---------- exchange (koryu) ---------- */
+.koryu{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.cycle{position:relative;aspect-ratio:1/1;max-width:440px;margin-inline:auto;width:100%}
+.cycle svg{width:100%;height:100%}
+.cycle-legend{display:none;list-style:none;counter-reset:c;margin:18px 0 0;padding:0}
+.cycle-legend li{counter-increment:c;position:relative;padding:10px 0 10px 34px;border-bottom:1px solid rgba(255,255,255,.12);font-size:13.5px;color:#dbe3ee;line-height:1.7}
+.cycle-legend li::before{content:counter(c);position:absolute;left:0;top:10px;width:22px;height:22px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font-family:var(--en);font-size:12px;display:grid;place-items:center;line-height:1}
+.koryu__items{display:grid;gap:22px}
+.k-item{border-left:2px solid var(--gold);padding:4px 0 4px 22px}
+.k-item h3{font-family:var(--serif);font-size:19px;margin:0 0 6px;letter-spacing:.04em;color:#fff}
+.k-item p{margin:0;font-size:14px;color:#c9d2e0}
+.photo-band{height:340px;background:url("../assets/img/street-shops.jpg") center 62%/cover no-repeat;position:relative}
+.photo-band span{position:absolute;right:16px;bottom:10px;font-size:10px;color:rgba(255,255,255,.8);text-shadow:0 1px 2px rgba(0,0,0,.6)}
+
+/* ---------- stories ---------- */
+.stories{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.story{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.story__img{aspect-ratio:16/9;overflow:hidden}
+.story__img img{width:100%;height:100%;object-fit:cover}
+.story__body{padding:30px 30px 34px}
+.story__tag{display:inline-block;font-size:12px;letter-spacing:.08em;border:1px solid var(--ink-3);color:var(--ink-2);padding:2px 10px;margin-bottom:14px}
+.story h3{font-family:var(--serif);font-size:19px;line-height:1.6;margin:0 0 4px}
+.story__who{font-size:13px;color:var(--ink-3);margin:0 0 20px}
+.ba{display:grid;gap:12px}
+.ba div{padding:16px 18px;font-size:14px;line-height:1.8}
+.ba .before{background:var(--bg-soft);color:var(--ink-2)}
+.ba .after{background:#fbf8f1;border-left:3px solid var(--gold)}
+.ba b{display:block;font-family:var(--en);font-size:11px;letter-spacing:.24em;margin-bottom:4px}
+.ba .before b{color:var(--ink-3)}
+.ba .after b{color:var(--gold)}
+
+/* ---------- why JTB ---------- */
+.why{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:56px}
+.why__card{grid-column:span 2;border:1px solid rgba(255,255,255,.14);padding:30px 26px;background:rgba(255,255,255,.03)}
+.why__card:nth-child(4),.why__card:nth-child(5){grid-column:span 3}
+.why__en{font-family:var(--en);font-size:11px;letter-spacing:.24em;color:var(--gold);margin:0 0 10px}
+.why__card h3{font-family:var(--serif);font-size:18px;margin:0 0 4px;color:#fff;letter-spacing:.04em}
+.why__role{font-size:13px;color:var(--gold-soft);margin:0 0 12px}
+.why__card p{margin:0;font-size:13.5px;color:#c9d2e0;line-height:1.8}
+.why__card .fig{font-family:var(--serif);font-size:15px;color:#fff;margin-top:14px;display:block}
+
+/* ---------- price ---------- */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.plan{border:1px solid var(--line);background:#fff;padding:40px 36px}
+.plan--main{border-top:3px solid var(--navy)}
+.plan--sub{border-top:3px solid var(--gold)}
+.plan__en{font-family:var(--en);font-size:12px;letter-spacing:.24em;color:var(--ink-3);margin:0 0 6px}
+.plan h3{font-family:var(--serif);font-size:22px;margin:0 0 14px}
+.plan__price{font-family:var(--serif);font-size:clamp(28px,3.2vw,36px);color:var(--navy);margin:0;font-weight:600;line-height:1.4}
+.plan__price small{font-size:14px;font-family:var(--sans);color:var(--ink-2);font-weight:400;margin-left:6px}
+.plan__per{font-size:13px;color:var(--ink-3);margin:4px 0 22px}
+.plan ul{list-style:none;margin:0;padding:22px 0 0;border-top:1px solid var(--line)}
+.plan li{padding-left:26px;position:relative;font-size:14px;margin:8px 0}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* ---------- flow ---------- */
+.flow{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px 28px;counter-reset:f}
+.flow li{background:#fff;border:1px solid var(--line);padding:26px 18px 24px;position:relative;counter-increment:f}
+.flow li{padding:30px 26px 28px}
+.flow li::before{content:"STEP 0" counter(f);font-family:var(--en);font-size:11px;letter-spacing:.2em;color:var(--gold);display:block;margin-bottom:10px}
+.flow li:not(:nth-child(3n))::after{content:"";position:absolute;right:-18px;top:50%;width:8px;height:8px;border-top:1px solid var(--ink-3);border-right:1px solid var(--ink-3);transform:translateY(-50%) rotate(45deg)}
+.flow h3{font-size:16.5px;margin:0 0 8px;line-height:1.5}
+.flow p{font-size:13.5px;color:var(--ink-2);margin:0;line-height:1.7}
+
+/* ---------- faq ---------- */
+.faq{max-width:860px;margin:56px auto 0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 48px 24px 44px;position:relative;font-weight:700;font-size:15.5px;line-height:1.7}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";position:absolute;left:4px;top:20px;font-family:var(--en);font-size:22px;color:var(--gold);font-weight:400}
+.faq summary::after{content:"";position:absolute;right:12px;top:50%;width:10px;height:10px;border-right:1px solid var(--ink-2);border-bottom:1px solid var(--ink-2);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .a{padding:0 16px 26px 44px;position:relative;color:var(--ink-2);font-size:14.5px}
+.faq .a::before{content:"A";position:absolute;left:4px;top:-4px;font-family:var(--en);font-size:22px;color:var(--navy)}
+.faq .a p{margin:0}
+
+/* ---------- contact ---------- */
+.contact{position:relative;color:#fff;background:var(--navy) url("../assets/img/cta-saigon-bluehour.jpg") center/cover no-repeat;isolation:isolate}
+.contact::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,51,.9),rgba(11,26,51,.82));z-index:-1}
+.contact__grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
+.contact .h2{font-size:clamp(28px,3.6vw,42px)}
+.promise{list-style:none;padding:0;margin:32px 0 0}
+.promise li{padding:14px 0 14px 34px;border-bottom:1px solid rgba(255,255,255,.14);position:relative;font-size:14.5px;color:#dbe3ee}
+.promise li::before{content:"";position:absolute;left:4px;top:24px;width:14px;height:7px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+.form{background:#fff;color:var(--ink);padding:40px 36px}
+.form h3{font-family:var(--serif);font-size:20px;margin:0 0 6px}
+.form__note{font-size:13px;color:var(--ink-2);margin:0 0 24px}
+.field{margin-bottom:18px}
+.field label,.field legend{display:block;font-size:13px;font-weight:700;margin-bottom:8px;padding:0}
+.field .req{font-size:11px;color:#fff;background:var(--accent);padding:1px 6px;margin-left:8px;font-weight:500;vertical-align:1px}
+.field input[type=text],.field input[type=email],.field select,.field textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1px solid #c9d0db;border-radius:var(--radius);background:#fff;color:var(--ink)}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+fieldset.field{border:0;margin:0 0 18px;padding:0;min-width:0}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px}
+.checks label{font-weight:400;font-size:14px;display:flex;align-items:center;gap:6px;margin:0;cursor:pointer}
+.form .btn{width:100%;margin-top:8px;padding:18px}
+.form__done{display:none;margin-top:16px;padding:14px 16px;background:#fbf8f1;border-left:3px solid var(--gold);font-size:13.5px;line-height:1.8}
+.form__done.is-show{display:block}
+
+/* ---------- footer ---------- */
+.footer{background:#071225;color:#9fb0c8;padding:64px 0 120px;font-size:13px}
+.footer__top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer__nav{display:flex;flex-wrap:wrap;gap:12px 26px}
+.footer__nav a{text-decoration:none;color:#c9d2e0}
+.footer__nav a:hover{color:var(--gold)}
+.disclaimer{margin:32px 0 0;padding:20px 22px;border:1px solid rgba(200,164,92,.45);color:#e6ebf3;line-height:1.9;font-size:13px}
+.credits{margin-top:28px;font-size:11px;line-height:1.9;color:#7f8ea6}
+.credits a{color:#9fb0c8}
+.copy{margin-top:24px;font-family:var(--en);letter-spacing:.14em;font-size:11px;color:#6d7c94}
+
+/* ---------- mobile fixed CTA ---------- */
+.fixed-cta{display:none}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .hero__scroll::after{animation:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .why__card,.why__card:nth-child(4),.why__card:nth-child(5){grid-column:span 3}
+  .why__card:nth-child(5){grid-column:span 6}
+}
+@media (max-width:860px){
+  .sec{padding:80px 0}
+  .nav{position:fixed;inset:72px 0 auto;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 24px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;box-shadow:0 12px 24px rgba(0,0,0,.25)}
+  .nav.is-open{opacity:1;transform:none;pointer-events:auto}
+  .nav a{padding:16px 4px;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px}
+  .nav .btn{margin-top:16px;border:0;padding:14px}
+  .menu-btn{display:block}
+  .menu-btn[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn[aria-expanded=true] span:nth-child(2){opacity:0}
+  .menu-btn[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .stats{grid-template-columns:1fr}
+  .stat+.stat{border-left:0;border-top:1px solid var(--line)}
+  .pains,.stories,.price{grid-template-columns:1fr}
+  .alone,.point,.koryu,.contact__grid{grid-template-columns:1fr;gap:36px}
+  .point--rev .point__img{order:0}
+  .point+.point{margin-top:72px}
+  .alone__img img{aspect-ratio:16/10}
+  .flow{grid-template-columns:1fr}
+  .flow li::after{display:none}
+  .why{grid-template-columns:1fr}
+  .why__card,.why__card:nth-child(4),.why__card:nth-child(5){grid-column:auto}
+  .photo-band{height:220px}
+  .form{padding:30px 22px}
+  .plan{padding:32px 24px}
+  .fixed-cta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;transform:translateY(140%);transition:transform .3s}
+  .fixed-cta.is-show{transform:none}
+  .fixed-cta .btn{width:100%;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+}
+@media (max-width:640px){
+  .table-wrap{overflow:visible}
+  .compare{min-width:0;background:none}
+  .compare thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .compare,.compare tbody,.compare tr,.compare th,.compare td{display:block;width:auto}
+  .compare tr{background:#fff;border:1px solid var(--line);margin-bottom:14px}
+  .compare tbody th{width:auto;background:var(--navy);color:#fff;padding:12px 16px;border:0}
+  .compare td{padding:14px 16px;border:0}
+  .compare td:nth-child(2){width:auto;border-bottom:1px dashed var(--line)}
+  .compare td::before{display:block;font-size:11px;letter-spacing:.06em;font-weight:700;margin-bottom:2px}
+  .compare td:nth-child(2)::before{content:attr(data-label);color:var(--ink-3)}
+  .compare td:nth-child(3)::before{content:"◎ KORYU BASEなら";color:var(--gold);margin-right:0}
+  .cyc-labels{display:none}
+  .cycle-legend{display:block}
+}
+@media (max-width:480px){
+  .pc-only{display:none}
+  .hero__in{padding:120px 0 110px}
+  .hero__cta .btn{width:100%}
+  .statement{padding:72px 0 24px}
+  .compare th,.compare td{padding:16px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="top">
+  <div class="wrap header__in">
+    <a href="#top" class="logo" aria-label="KORYU BASE Ho Chi Minh（仮称）トップへ">
+      <span class="logo__mark" aria-hidden="true">交</span>
+      <span class="logo__txt">KORYU BASE<small>HO CHI MINH（仮称）</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="gnav" aria-label="ページ内メニュー">
+      <a href="#problem">PROBLEM</a>
+      <a href="#service">SERVICE</a>
+      <a href="#koryu">COMMUNITY</a>
+      <a href="#why">WHY JTB</a>
+      <a href="#price">PRICE</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn--gold">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero__in">
+    <p class="hero__label">OVERSEAS EXPANSION BASE — VIETNAM</p>
+    <h1 id="hero-title">海外進出を、<br>ひとりで背負わない。</h1>
+    <p class="hero__sub">拠点も、信頼できる現地パートナーも、同じ挑戦をする仲間も。<br>ベトナム進出に必要な「場所」と「つながり」を、<br class="pc-only">JTBの海外ネットワークでご用意します。</p>
+    <div class="hero__cta">
+      <a href="#contact" class="btn btn--gold">無料で相談する <span class="arrow">→</span></a>
+      <a href="#service" class="btn btn--ghost">サービスを見る</a>
+    </div>
+  </div>
+  <a href="#statement" class="hero__scroll">SCROLL</a>
+</section>
+
+<!-- ============ STATEMENT + MARKET ============ -->
+<section class="statement" id="statement">
+  <div class="wrap">
+    <p class="rv">進出は、ゴールではなく<em>スタート</em>。<br>だから、入ったあとも<em>ひとりにしない</em>。</p>
+  </div>
+</section>
+<section class="sec" style="padding-top:56px" aria-labelledby="market-title">
+  <div class="wrap center">
+    <p class="eyebrow rv">WHY VIETNAM</p>
+    <h2 class="h2 rv" id="market-title">いま、日本企業がベトナムを選ぶ理由</h2>
+    <p class="lead rv">人件費の上昇と円安が続く日本。中国に代わる拠点として、ベトナムへの注目はかつてなく高まっています。</p>
+    <div class="stats rv">
+      <div class="stat">
+        <p class="stat__label">今後検討する生産拠点ランキング</p>
+        <p class="stat__num">1<small>位</small></p>
+        <p class="stat__src">ベトナムが中国を上回り首位<br>帝国データバンク（2025年11月）</p>
+      </div>
+      <div class="stat">
+        <p class="stat__label">日本の最低賃金の引き上げ額（2025年度）</p>
+        <p class="stat__num">+66<small>円</small></p>
+        <p class="stat__src">過去最大の上げ幅<br>厚生労働省（全国加重平均 1,121円）</p>
+      </div>
+      <div class="stat">
+        <p class="stat__label">ホーチミン市の日本商工会議所 会員企業</p>
+        <p class="stat__num">約900<small>社</small></p>
+        <p class="stat__src">すでに多くの日系企業が集まる都市<br>ジェトロ ビジネス短信（2025年12月）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec sec--soft" id="problem" aria-labelledby="problem-title">
+  <div class="wrap center">
+    <p class="eyebrow rv">PROBLEM</p>
+    <h2 class="h2 rv" id="problem-title">海外進出で、こんな不安はありませんか？</h2>
+    <p class="lead rv">資金も技術もある。それでも一歩を踏み出せないのは、「現地で頼れる相手」がいないからかもしれません。</p>
+  </div>
+  <div class="wrap">
+    <div class="pains">
+      <article class="pain rv">
+        <p class="pain__no">WORRY 01</p>
+        <h3>信頼できる現地パートナーが<br>見つからない</h3>
+        <p>物件の仲介、協業先、労務の相談先。誰に頼めばいいのか分からず、検討が止まってしまう。</p>
+        <p class="pain__data"><b>54.9%</b>海外展開を実現できた要因の第1位は「信頼できる現地パートナーの開拓」<br>（中小機構 2024年）</p>
+      </article>
+      <article class="pain rv">
+        <p class="pain__no">WORRY 02</p>
+        <h3>法規制や許認可が<br>分からない</h3>
+        <p>外資規制、土地の扱い、営業許可。日本とは違うルールを、手探りで調べ続けることになる。</p>
+        <p class="pain__data"><b>22.4%</b>撤退・中断の理由として「現地の法制度・認証対応が難しかった」<br>（DNP 海外進出実態調査 2026年）</p>
+      </article>
+      <article class="pain rv">
+        <p class="pain__no">WORRY 03</p>
+        <h3>進出しても、<br>相談できる相手がいない</h3>
+        <p>現地法人を立ち上げたあとも、商習慣や集客の悩みは尽きない。駐在員が孤立し、手応えのないまま時間が過ぎていく。</p>
+        <p class="pain__data"><b>36.8%</b>成功企業との違いの第1位は「現地に強いパートナーや支援者の有無」<br>（DNP 海外進出実態調査 2026年）</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IF ALONE ============ -->
+<section class="sec" aria-labelledby="alone-title">
+  <div class="wrap alone">
+    <figure class="alone__img rv">
+      <img src="../assets/img/consult.jpg" alt="ノートパソコンの前でメモを取るビジネスパーソン" loading="lazy" width="1600" height="1068">
+    </figure>
+    <div>
+      <p class="eyebrow rv">IF YOU GO ALONE</p>
+      <h2 class="h2 rv" id="alone-title">だからといって、<br>1社だけで進出すると…</h2>
+      <ol class="alone__list">
+        <li class="rv">
+          <h3>そもそも、土地は買えない</h3>
+          <p>ベトナムでは外資企業は土地を所有できず、借りるしかありません。しかも物件ごとに土地使用権や消防などの書類を確認する必要があります。</p>
+        </li>
+        <li class="rv">
+          <h3>会社をつくる前に、「場所」が要る</h3>
+          <p>投資登録証明書（IRC）の申請には、事業所の賃貸借契約書が必要です。会社もない状態で「許可が下りる物件」を自力で探さなければなりません。</p>
+        </li>
+        <li class="rv">
+          <h3>準備期間のコストが、先に出ていく</h3>
+          <p>法人設立までには数か月かかるのが一般的です。その間も駐在員の人件費や出張費は積み上がり、成果が出る前に体力を削られます。</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE (3 POINTS) ============ -->
+<section class="sec sec--soft" id="service" aria-labelledby="service-title">
+  <div class="wrap">
+    <div class="solve-head">
+      <span class="badge rv">解決</span>
+      <p class="eyebrow rv" style="justify-content:center">OUR SERVICE</p>
+      <h2 class="h2 rv" id="service-title">「場所の提供」と「商圏の形成」で、<br>進出の前も後も支えます。</h2>
+      <p class="lead rv" style="margin-inline:auto">JTBの海外アセットを統合して活用し、事業拠点と企業間連携の仕組みを提供。<br>低リスクな海外進出と、進出後の売上拡大を実現します。</p>
+    </div>
+
+    <div class="point">
+      <div class="point__img rv"><img src="../assets/img/office.jpg" alt="ガラス張りの個室が並ぶ明るいオフィスの通路" loading="lazy" width="1600" height="1068"></div>
+      <div>
+        <p class="point__no rv"><b>01</b>PLACE</p>
+        <h3 class="rv">書類の整った「拠点」を、<br>すぐに使える。</h3>
+        <p class="rv">JTBが確保した区画を、進出企業ごとのテナントとしてご提供。物件側の書類は事前に整備し、一式でお渡しします。土地法を調べながら物件を探す必要はありません。</p>
+        <ul class="rv">
+          <li>JTBが確保済みの区画から選べる</li>
+          <li>土地使用権・消防などの物件書類を一式でお渡し</li>
+          <li>物件選定から施設運営まで、拠点の実務を一貫して担当</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="point point--rev">
+      <div class="point__img rv"><img src="../assets/img/partner.jpg" alt="カフェのテーブルで握手を交わす二人のビジネスパーソン" loading="lazy" width="1600" height="1071"></div>
+      <div>
+        <p class="point__no rv"><b>02</b>PARTNER</p>
+        <h3 class="rv">頼れる「現地パートナー」と、<br>ワンストップでつなぐ。</h3>
+        <p class="rv">JTBグループの海外拠点網と、アジアに根を張る現地ネットワークを活用。用地・許認可・人材・物流まで、進出に必要な実務をワンストップで支援します。</p>
+        <ul class="rv">
+          <li>JTBの現地ネットワークを活用したパートナー紹介</li>
+          <li>現地視察・市場調査で、進出前の解像度を高める</li>
+          <li>用地・許認可・人材・物流をワンストップで支援</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point__img rv"><img src="../assets/img/community.jpg" alt="「COMMUNAL」の文字と観葉植物が置かれた共用ラウンジ" loading="lazy" width="1600" height="900"></div>
+      <div>
+        <p class="point__no rv"><b>03</b>COMMUNITY</p>
+        <h3 class="rv">入居企業が仲間になり、<br>新しい「商圏」が生まれる。</h3>
+        <p class="rv">同じ拠点に集まった日本企業どうしが、顧客を送客し合い、連携して新しい事業を生み出す。JTB主催のイベントに共同で出展すれば、1社では大きくかかるマーケティングコストも抑えられます。</p>
+        <ul class="rv">
+          <li>入居企業どうしの送客・連携</li>
+          <li>JTB主催の共同マーケティングイベント</li>
+          <li>同じ壁を越えた仲間に、いつでも相談できる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="sec" aria-labelledby="compare-title">
+  <div class="wrap center">
+    <p class="eyebrow rv">COMPARISON</p>
+    <h2 class="h2 rv" id="compare-title">単独で進出する場合との違い</h2>
+    <p class="lead rv">JTBが保有する拠点・現地ネットワークと、企業間の交流機会によって、海外進出に伴う負担を軽減。進出後の連携・事業創出まで支援します。</p>
+  </div>
+  <div class="wrap">
+    <div class="table-wrap rv" role="region" aria-label="単独で進出する場合と本サービスで進出する場合の比較表" tabindex="0">
+      <table class="compare">
+        <thead>
+          <tr><th scope="col">項目</th><th scope="col">単独で進出する場合</th><th scope="col">KORYU BASEで進出する場合</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">物件探し</th><td data-label="単独で進出">土地法を調べながら自力で探す</td><td>JTBが確保済みの区画（オフィス）から選ぶ</td></tr>
+          <tr><th scope="row">物件側の書類</th><td data-label="単独で進出">土地使用権・消防等を自社で確認</td><td>JTBが事前に整備し、一式で渡す</td></tr>
+          <tr><th scope="row">現地パートナー探し</th><td data-label="単独で進出">単独で現地パートナーを探す（最大の壁）</td><td>JTBの現地ネットワークを活用する</td></tr>
+          <tr><th scope="row">マーケティング</th><td data-label="単独で進出">単独で現地の集客基盤をつくる</td><td>JTB共同マーケイベントを開催し、商圏まで形成する</td></tr>
+          <tr><th scope="row">進出後の関係</th><td data-label="単独で進出">周りに相談相手がいない</td><td>同じ拠点の入居企業が仲間になる。連携・送客も行う</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KORYU (COMMUNITY) ============ -->
+<div class="photo-band" role="img" aria-label="ホーチミン市の店舗が入る集合ビル"><span>Photo: Raita Futo / CC BY 2.0</span></div>
+<section class="sec sec--navy" id="koryu" aria-labelledby="koryu-title">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow rv">COMMUNITY</p>
+      <h2 class="h2 rv" id="koryu-title">入居して終わり、ではありません。<br>出会いを重ね、商圏を育てる。</h2>
+      <p class="lead rv">私たちが考える「交流」とは、日本企業と現地企業、そして日本企業どうしが出会いを重ねること。<br>人・情報・モノの流れを生み、その出会いと共感を持続的につくっていきます。</p>
+    </div>
+    <div class="koryu">
+      <div class="cycle-box rv"><div class="cycle" aria-hidden="true">
+        <svg viewBox="0 0 440 440" role="presentation">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#c8a45c"/></marker>
+          </defs>
+          <circle cx="220" cy="220" r="150" fill="none" stroke="rgba(200,164,92,.35)" stroke-dasharray="3 6"/>
+          <path d="M 281 83 A 150 150 0 0 1 368.7 239.8" fill="none" stroke="#c8a45c" stroke-width="1.5" marker-end="url(#ah)"/>
+          <path d="M 304.8 343.8 A 150 150 0 0 1 135.3 343.8" fill="none" stroke="#c8a45c" stroke-width="1.5" marker-end="url(#ah)"/>
+          <path d="M 71.3 239.8 A 150 150 0 0 1 159 83" fill="none" stroke="#c8a45c" stroke-width="1.5" marker-end="url(#ah)"/>
+          <circle cx="220" cy="220" r="66" fill="#13284a" stroke="#c8a45c"/>
+          <text x="220" y="212" text-anchor="middle" fill="#c8a45c" font-family="Jost,Arial" font-size="12" letter-spacing="3">KORYU</text>
+          <text x="220" y="236" text-anchor="middle" fill="#fff" font-family="Noto Serif JP,serif" font-size="17">JTBの拠点</text>
+          <g font-family="Noto Sans JP,sans-serif" text-anchor="middle">
+            <circle cx="220" cy="70" r="46" fill="#0b1a33" stroke="#fff" stroke-opacity=".5"/>
+            <text x="220" y="66" fill="#fff" font-size="14">日本食</text><text x="220" y="85" fill="#fff" font-size="14">レストラン</text>
+            <circle cx="350" cy="300" r="46" fill="#0b1a33" stroke="#fff" stroke-opacity=".5"/>
+            <text x="350" y="296" fill="#fff" font-size="14">美容</text><text x="350" y="315" fill="#fff" font-size="14">サロン</text>
+            <circle cx="90" cy="300" r="46" fill="#0b1a33" stroke="#fff" stroke-opacity=".5"/>
+            <text x="90" y="296" fill="#fff" font-size="14">日本製</text><text x="90" y="315" fill="#fff" font-size="14">化粧品店</text>
+          </g>
+          <g class="cyc-labels" font-family="Noto Sans JP,sans-serif" font-size="11" fill="#e9dcc0" text-anchor="middle">
+            <text x="400" y="146">食事のお客様に</text><text x="400" y="162">サロンの割引券</text>
+            <text x="220" y="412">サロンのお客様に化粧品をご紹介</text>
+            <text x="42" y="146">購入者に</text><text x="42" y="162">提携店のクーポン</text>
+          </g>
+        </svg>
+      </div>
+      <p class="note" style="text-align:center;margin-top:4px">送客の一例（イメージ）</p>
+      <ol class="cycle-legend">
+        <li>日本食レストランで食事をしたお客様に、美容サロンの割引券</li>
+        <li>美容サロンを利用したお客様に、日本製化粧品をご紹介</li>
+        <li>化粧品店で購入したお客様に、提携店のクーポン</li>
+      </ol>
+      </div>
+      <div class="koryu__items">
+        <div class="k-item rv">
+          <h3>入居企業どうしの送客</h3>
+          <p>同じ拠点の企業が、互いのお客様を紹介し合う。1社では届かなかった顧客との接点が、拠点全体で広がります。</p>
+        </div>
+        <div class="k-item rv">
+          <h3>連携による新規事業</h3>
+          <p>業種の違う日本企業が隣り合うことで、協業のアイデアが生まれる。現地企業との出会いも、拠点が橋渡しします。</p>
+        </div>
+        <div class="k-item rv">
+          <h3>JTB主催の共同マーケティングイベント</h3>
+          <p>予算組みから当日運営、トラブル対応、精算まで。JTBが培ったイベント運営力で場をつくり、入居企業は出展するだけ。マーケティングコストを抑えながら現地での認知を広げられます。</p>
+        </div>
+        <div class="k-item rv">
+          <h3>現地ノウハウを、仲間から学ぶ</h3>
+          <p>商習慣、採用、仕入れ先。先に進出した入居企業やJTBから、現地のリアルな知見を得られます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORIES ============ -->
+<section class="sec sec--warm" aria-labelledby="story-title">
+  <div class="wrap center">
+    <p class="eyebrow rv">USE CASE</p>
+    <h2 class="h2 rv" id="story-title">こんな企業の、最初の一歩に。</h2>
+    <p class="lead rv">私たちが想定しているのは、技術も意欲もありながら、海外進出の経験がない日本企業です。</p>
+  </div>
+  <div class="wrap">
+    <div class="stories">
+      <article class="story rv">
+        <div class="story__img"><img src="img/saigon-landmark-night.jpg" alt="サイゴン川の対岸から見たホーチミン市の高層ビル群の夜景" loading="lazy" width="1600" height="1066"></div>
+        <div class="story__body">
+          <span class="story__tag">想定ストーリー 01｜成長型</span>
+          <h3>国内で成功し、海外に拠点を設けたい</h3>
+          <p class="story__who">精密機械部品メーカー／従業員300名／国内シェア上位のニッチトップ企業</p>
+          <div class="ba">
+            <div class="before"><b>BEFORE</b>海外取引先からの引き合いが増え、攻めの海外展開を検討中。資金も技術力もあるが、海外進出の実務経験はゼロ。何から手をつければいいか分からない。</div>
+            <div class="after"><b>AFTER</b>現地視察で進出前の解像度を高め、書類の整った区画に入居。JTBの紹介で現地パートナーとつながり、共同マーケティングイベントで現地の顧客との接点をつくる。</div>
+          </div>
+        </div>
+      </article>
+      <article class="story rv">
+        <div class="story__img"><img src="../assets/img/industrial-park.jpg" alt="ベトナムの工業団地に建つ工場の外観" loading="lazy" width="1600" height="1206"></div>
+        <div class="story__body">
+          <span class="story__tag">想定ストーリー 02｜事業基盤の移転型</span>
+          <h3>人件費の高騰で、事業基盤を海外に移したい</h3>
+          <p class="story__who">金属部品加工業／従業員80名／創業45年の中堅メーカー</p>
+          <div class="ba">
+            <div class="before"><b>BEFORE</b>人件費高騰と円安で価格競争力が低下し、生産拠点ごとの海外移管を検討中。しかし海外は未経験で、信頼できる相談相手がいない。</div>
+            <div class="after"><b>AFTER</b>用地・許認可・人材・物流をワンストップで相談しながら移転準備を進める。入居後は、同じ拠点の企業から現地の労務や取引先の情報を得て、孤立せずに事業を立ち上げる。</div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="note center">※ 上記は本サービスが想定する利用イメージであり、実在の企業の事例ではありません。</p>
+  </div>
+</section>
+
+<!-- ============ WHY JTB ============ -->
+<section class="sec sec--navy" id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow rv">WHY JTB</p>
+      <h2 class="h2 rv" id="why-title">商圏を支える、JTBの5つの力</h2>
+      <p class="lead rv">人と人、人と地域、人と組織の出会いをつくり続けてきたJTB。<br>そのアセットを統合して、海外進出の「場」と「つながり」を支えます。</p>
+    </div>
+    <div class="why">
+      <article class="why__card rv">
+        <p class="why__en">GLOBAL NETWORK</p>
+        <h3>現地ネットワーク</h3>
+        <p class="why__role">信頼できるパートナーをつなぐ</p>
+        <p>グループの海外拠点網に加え、アジア各国に根を張るEXO Travel Group、世界で業界イベントを展開するNorthstar Travel Groupの買収により、現地とのつながりをさらに拡充。</p>
+        <span class="fig">39カ国138都市447拠点<small style="font-size:11px;color:#93a0b5;display:block;font-family:var(--sans)">JTBグループ海外拠点網（2020年3月時点）</small></span>
+      </article>
+      <article class="why__card rv">
+        <p class="why__en">CORPORATE SALES</p>
+        <h3>法人営業網</h3>
+        <p class="why__role">進出意欲のある企業と出会う</p>
+        <p>首都圏の法人営業網から、海外進出を検討する企業へ声をかけ、最初の相談の入口をつくります。</p>
+        <span class="fig">首都圏11拠点・約700人</span>
+      </article>
+      <article class="why__card rv">
+        <p class="why__en">MICE</p>
+        <h3>MICE運営力</h3>
+        <p class="why__role">現場を回す力</p>
+        <p>予算組みから当日運営・トラブル対応・精算まで、一気通貫で現場を動かす。共同マーケティングイベントの成功を支えます。</p>
+      </article>
+      <article class="why__card rv">
+        <p class="why__en">ASSET MANAGEMENT</p>
+        <h3>JTBアセットマネジメント</h3>
+        <p class="why__role">物件選定・施設運営</p>
+        <p>物件選定から施設運営まで、拠点の実務を一貫して担います。</p>
+      </article>
+      <article class="why__card rv">
+        <p class="why__en">LAPITA</p>
+        <h3>LAPITA（ラピタ）</h3>
+        <p class="why__role">現地視察・市場調査</p>
+        <p>日本企業の海外展開を支援してきた現地視察・市場調査のノウハウを活かし、進出前の解像度を高めます。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICE ============ -->
+<section class="sec sec--soft" id="price" aria-labelledby="price-title">
+  <div class="wrap center">
+    <p class="eyebrow rv">PRICE</p>
+    <h2 class="h2 rv" id="price-title">「拠点」と「イベント」の、<br>シンプルな2つの料金</h2>
+    <p class="lead rv">必要なのは、拠点の利用料と、参加したいイベントの出展料だけ。<br>進出のステージに合わせてご利用いただけます。</p>
+  </div>
+  <div class="wrap">
+    <div class="price">
+      <article class="plan plan--main rv">
+        <p class="plan__en">OFFICE</p>
+        <h3>オフィス賃料（拠点の利用料）</h3>
+        <p class="plan__price">120万〜200万円<small>／年</small></p>
+        <p class="plan__per">月あたり約10万〜17万円（1社あたりの目安）</p>
+        <ul>
+          <li>JTBが確保した区画（オフィス）のご利用</li>
+          <li>物件側の書類一式のご提供</li>
+          <li>JTBの現地ネットワークによるパートナー紹介</li>
+          <li>入居企業どうしの交流・送客の場への参加</li>
+        </ul>
+      </article>
+      <article class="plan plan--sub rv">
+        <p class="plan__en">EVENT</p>
+        <h3>共同マーケイベント出展料</h3>
+        <p class="plan__price">イベントごと<small>に設定</small></p>
+        <p class="plan__per">出展したいイベントを選んで参加</p>
+        <ul>
+          <li>JTB主催の共同マーケティングイベントへの出展</li>
+          <li>企画・集客・当日運営はJTBが担当</li>
+          <li>1社で開催するより、マーケティングコストを抑えられる</li>
+          <li>現地の顧客・企業との新しい接点づくり</li>
+        </ul>
+      </article>
+    </div>
+    <p class="note center">※ 金額は構想段階の目安です。区画の広さ・立地・ご利用内容により変動します。</p>
+  </div>
+</section>
+
+<!-- ============ FLOW ============ -->
+<section class="sec" aria-labelledby="flow-title">
+  <div class="wrap center">
+    <p class="eyebrow rv">FLOW</p>
+    <h2 class="h2 rv" id="flow-title">ご相談から、商圏づくりまで</h2>
+    <p class="lead rv">はじめての海外進出でも、ひとつずつ一緒に進めます。</p>
+  </div>
+  <div class="wrap">
+    <ol class="flow">
+      <li class="rv"><h3>無料相談</h3><p>事業内容や進出の目的、現在のお悩みを伺います。</p></li>
+      <li class="rv"><h3>現地視察・市場調査</h3><p>現地を実際に見て、進出前の解像度を高めます。</p></li>
+      <li class="rv"><h3>区画の選定・ご契約</h3><p>JTBが確保した区画から、事業に合う拠点を選びます。</p></li>
+      <li class="rv"><h3>書類のお渡し・申請</h3><p>物件側の書類を一式でお渡しし、申請へ進みます。</p></li>
+      <li class="rv"><h3>入居・事業開始</h3><p>現地パートナーとつながり、事業をスタート。</p></li>
+      <li class="rv"><h3>交流・共同マーケ</h3><p>入居企業との送客・連携、イベント出展で商圏を育てます。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec--soft" id="faq" aria-labelledby="faq-title">
+  <div class="wrap center">
+    <p class="eyebrow rv">FAQ</p>
+    <h2 class="h2 rv" id="faq-title">よくあるご質問</h2>
+  </div>
+  <div class="wrap">
+    <div class="faq">
+      <details class="rv">
+        <summary>海外進出の経験がまったくありません。それでも相談できますか？</summary>
+        <div class="a"><p>はい。むしろ、海外進出の実務経験がない企業さまにこそご相談いただきたいサービスです。現地視察・市場調査から区画の選定、現地パートナーのご紹介まで、ひとつずつ一緒に進めます。</p></div>
+      </details>
+      <details class="rv">
+        <summary>製造業でも利用できますか？</summary>
+        <div class="a"><p>はい。生産拠点の移管を検討されている製造業の企業さまも想定しています。用地・許認可・人材・物流をワンストップでご支援し、拠点の準備を進めます。</p></div>
+      </details>
+      <details class="rv">
+        <summary>JETROなどの公的支援とは何が違いますか？</summary>
+        <div class="a"><p>公的機関による情報提供や商談アレンジに加えて、本サービスでは事業を始めるための「場所」と運営環境をまとめてご提供します。さらに入居後も、イベント開催などを通じて継続的に伴走します。</p></div>
+      </details>
+      <details class="rv">
+        <summary>入居後、ほかの企業とはどのようにつながれますか？</summary>
+        <div class="a"><p>入居企業どうしの送客・連携の仕組みと、JTB主催の共同マーケティングイベントを通じてつながります。同じ壁を越えてきた企業が、相談相手であり、協業のパートナーになります。</p></div>
+      </details>
+      <details class="rv">
+        <summary>ベトナム以外の国にも対応していますか？</summary>
+        <div class="a"><p>まずはベトナム・ホーチミンの拠点からスタートし、検証したモデルをタイ・インドネシアなど他のASEAN諸国へ順次広げていく計画です。将来的には、海外企業の日本進出も支援する双方向の拠点を目指します。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact__grid">
+    <div>
+      <p class="eyebrow rv">CONTACT</p>
+      <h2 class="h2 rv" id="contact-title">海外進出を、<br>ひとりで背負わない。</h2>
+      <p class="lead rv">「まだ検討段階で、何を聞けばいいかも分からない」。そんな段階でのご相談を歓迎しています。</p>
+      <ul class="promise rv">
+        <li>無理な営業や、即決のお願いはいたしません</li>
+        <li>まずは状況を伺い、本サービスが合うかどうかを一緒に確認します</li>
+        <li>検討段階・情報収集だけのご相談も歓迎です</li>
+      </ul>
+    </div>
+    <form class="form rv" id="contact-form" novalidate>
+      <h3>無料相談のお申し込み</h3>
+      <p class="form__note">ご入力いただいた内容をもとに、担当者よりご連絡いたします。</p>
+      <div class="field"><label for="f-company">企業名<span class="req">必須</span></label><input type="text" id="f-company" name="company" autocomplete="organization" required></div>
+      <div class="field"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-mail">メールアドレス<span class="req">必須</span></label><input type="email" id="f-mail" name="email" autocomplete="email" required></div>
+      <div class="field"><label for="f-stage">検討状況</label>
+        <select id="f-stage" name="stage">
+          <option>情報収集の段階</option>
+          <option>進出先を比較検討している</option>
+          <option>ベトナム進出を具体的に検討している</option>
+          <option>すでに海外拠点があり、拡大を検討している</option>
+        </select>
+      </div>
+      <fieldset class="field"><legend>関心のある内容（複数選択可）</legend>
+        <div class="checks">
+          <label><input type="checkbox" name="topic" value="place">拠点（区画）の利用</label>
+          <label><input type="checkbox" name="topic" value="partner">現地パートナーの紹介</label>
+          <label><input type="checkbox" name="topic" value="event">共同マーケイベント</label>
+          <label><input type="checkbox" name="topic" value="visit">現地視察・市場調査</label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="f-msg">ご相談内容（任意）</label><textarea id="f-msg" name="message" placeholder="例）精密部品の製造業です。海外取引先からの引き合いが増えており、ベトナムでの拠点設立を検討しています。"></textarea></div>
+      <button type="submit" class="btn btn--navy">無料で相談する <span class="arrow">→</span></button>
+      <p class="form__done" id="form-done" role="status" aria-live="polite">ありがとうございます。<br>本ページは学生チームによる事業提案のコンセプトページのため、実際には送信されません。</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <a href="#top" class="logo">
+        <span class="logo__mark" aria-hidden="true">交</span>
+        <span class="logo__txt">KORYU BASE<small>HO CHI MINH（仮称）</small></span>
+      </a>
+      <nav class="footer__nav" aria-label="フッターメニュー">
+        <a href="#problem">お悩み</a>
+        <a href="#service">サービス</a>
+        <a href="#koryu">交流の仕組み</a>
+        <a href="#why">JTBの強み</a>
+        <a href="#price">料金</a>
+        <a href="#faq">よくあるご質問</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="disclaimer">本ページは、CAREER ROOKIES GP 2026 準決勝に出場する学生チーム「真面目にちょけ隊」が、JTBをテーマとした新規事業提案のために制作したコンセプトページです。株式会社JTBが実際に提供しているサービスではなく、同社による制作・監修を受けたものでもありません。掲載している料金・サービス内容はすべて構想段階のものです。</p>
+    <div class="credits">
+      <p style="margin:0 0 4px">データ出典：帝国データバンク「海外進出に関する企業の意識調査」（2025年11月）／厚生労働省「地域別最低賃金」（2025年度）／ジェトロ ビジネス短信（2025年12月）／中小機構「中小企業の海外展開に関する調査」（2024年）／DNP出版IPビジネスプロジェクト「海外進出 実態調査」（2026年）／JTBグループ公表資料</p>
+      <p style="margin:0">写真（Wikimedia Commons）：
+        <a href="https://commons.wikimedia.org/wiki/File:Saigon_skyline_night_view.jpg" target="_blank" rel="noopener">Gurval Le Bouter</a>（CC BY 2.0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Saigon_at_Blue_Hour.jpg" target="_blank" rel="noopener">Radek Kucharski</a>（CC BY 2.0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Winplace-coworking-space.jpg" target="_blank" rel="noopener">Nguyendinhtruong2020</a>（CC BY-SA 4.0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_restaurant_building_(31663807198).jpg" target="_blank" rel="noopener">Raita Futo</a>（CC BY 2.0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Business_professional_engages_in_note-taking_during_a_meeting_at_a_modern_office_desk.jpg" target="_blank" rel="noopener">Shixart1985</a>（CC BY 2.0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Business_agreement_handshake_at_coffee_shop.jpg" target="_blank" rel="noopener">rawpixel.com</a>（CC0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Yen_Binh_Industrial_Park_SO.jpg" target="_blank" rel="noopener">Bacthai20</a>（CC0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Plant_in_a_coworking_space_(Unsplash).jpg" target="_blank" rel="noopener">Dan Gold</a>（CC0）／
+        <a href="https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City_-_Saigon1324.jpg" target="_blank" rel="noopener">lumoplank</a>（CC0）
+      </p>
+    </div>
+    <p class="copy">© 2026 TEAM MAJIME NI CHOKETAI — CAREER ROOKIES GP 2026</p>
+  </div>
+</footer>
+
+<div class="fixed-cta" id="fixed-cta"><a href="#contact" class="btn btn--gold">無料で相談する <span class="arrow">→</span></a></div>
+
+<script>
+(function(){
+  var header=document.querySelector('.header');
+  var fixed=document.getElementById('fixed-cta');
+  var contact=document.getElementById('contact');
+  function onScroll(){
+    var y=window.scrollY||window.pageYOffset;
+    header.classList.toggle('is-solid',y>40);
+    var cTop=contact.getBoundingClientRect().top;
+    fixed.classList.toggle('is-show',y>window.innerHeight*0.8 && cTop>window.innerHeight);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var btn=document.querySelector('.menu-btn'),nav=document.getElementById('gnav');
+  function setMenu(open){btn.setAttribute('aria-expanded',open);btn.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');nav.classList.toggle('is-open',open)}
+  btn.addEventListener('click',function(){setMenu(btn.getAttribute('aria-expanded')!=='true')});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('is-in')})}
+
+  var form=document.getElementById('contact-form'),done=document.getElementById('form-done');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=null;
+    form.querySelectorAll('[required]').forEach(function(f){
+      var ok=f.value.trim()!=='' && (f.type!=='email'||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value));
+      f.setAttribute('aria-invalid',ok?'false':'true');
+      f.style.borderColor=ok?'':'#b8322a';
+      if(!ok&&!bad)bad=f;
+    });
+    if(bad){bad.focus();return}
+    done.classList.add('is-show');
+  });
+})();
+</script>
+</body>
+</html>
