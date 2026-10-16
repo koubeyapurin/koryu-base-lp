@@ -439,7 +439,7 @@ section[id]{scroll-margin-top:72px}
     <p class="rv">進出は、ゴールではなく<em>スタート</em>。<br>だから、入ったあとも<em>ひとりにしない</em>。</p>
   </div>
 </section>
-<section class="sec" style="padding-top:56px" aria-labelledby="market-title">
+<section class="sec" style="padding-top:56px" aria-labelledby="market-title" data-kb-skip>
   <div class="wrap center">
     <p class="eyebrow rv">WHY VIETNAM</p>
     <h2 class="h2 rv" id="market-title">いま、日本企業がベトナムを選ぶ理由</h2>
@@ -1028,7 +1028,7 @@ section[id]{scroll-margin-top:72px}
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* キーボードでセクション移動（→ / Space：次、← / Shift+Space：前）。入力・操作中は無効 */
-  var stops=[].slice.call(document.querySelectorAll('main > section'));
+  var stops=[].slice.call(document.querySelectorAll('main > section:not([data-kb-skip])'));
   var kbTarget=-1,kbTime=0;
   function currentStop(){
     var line=80,idx=0;
