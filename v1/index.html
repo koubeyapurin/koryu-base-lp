@@ -360,6 +360,13 @@ fieldset.field{border:0;margin:0 0 18px;padding:0;min-width:0}
   .process__grid,.rich{grid-template-columns:1fr;gap:20px}
   .process__step:not(:last-child)::after{right:50%;top:auto;bottom:-16px;transform:translateX(50%) rotate(135deg)}
 }
+
+/* ---------- nav: 今見ているセクションの項目以外を薄く ---------- */
+.nav a:not(.btn){transition:opacity .25s,color .2s}
+.nav.has-current a:not(.btn){opacity:.4}
+.nav.has-current a:not(.btn):hover{opacity:.8}
+.nav.has-current a.is-current{opacity:1}
+section[id]{scroll-margin-top:72px}
 </style>
 </head>
 <body>
@@ -965,6 +972,22 @@ fieldset.field{border:0;margin:0 0 18px;padding:0;min-width:0}
   btn.addEventListener('click',function(){setMenu(btn.getAttribute('aria-expanded')!=='true')});
   nav.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  /* scroll spy: 今見ているセクションのナビ項目だけ元の色、他は薄く */
+  var spyNav=document.getElementById('gnav');
+  var spyLinks=[].slice.call(spyNav.querySelectorAll('a[href^="#"]:not(.btn)'));
+  var spySecs=spyLinks.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){
+    var probe=window.innerHeight*0.35,cur=-1;
+    spySecs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=probe)cur=i});
+    if(cur===spySecs.length-1&&spySecs[cur].getBoundingClientRect().bottom<probe)cur=-1;
+    spyNav.classList.toggle('has-current',cur>=0);
+    spyLinks.forEach(function(a,i){
+      var on=i===cur;a.classList.toggle('is-current',on);
+      if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
 
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
